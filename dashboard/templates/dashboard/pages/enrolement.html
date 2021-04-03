@@ -1,0 +1,44 @@
+{% extends 'dashboard/layouts/_base.html' %}
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+
+
+{% block title %}Enrolement{% endblock title %}
+
+
+{% block content %}
+    <div class="">
+        <div class="row">
+            <div class="col s12 l6">
+                <h4>Etudiants</h4>
+                <table class="table">
+                    <tr>
+                        <th>Noms</th>
+                        <th>Matricule</th>
+                    </tr>
+                    {% for student in students %}
+                        <tr>
+                            <td>{{ student.fullname }}</td>
+                            <td>{{ student.matricule }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col s12 l6">
+                <h4> Enrolement </h4>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="input-field col s12 m6">
+                            {{field}}
+                            <label>{{field.label}}</label>
+                        </div>
+                    {% endfor %}
+                    <div class="col s12">
+                        <a href="{% url 'dashboard:supervisor' %}" class="btn btn-warning">Annuler</a>
+                        <button type="submit" class="btn btn-info">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

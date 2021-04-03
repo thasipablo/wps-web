@@ -1,0 +1,11 @@
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.check-icon {
+    width: 75px;
+}

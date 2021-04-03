@@ -1,0 +1,25 @@
+{% extends 'dashboard/layouts/_base.html' %}
+{% load static %}
+
+{% block title %}Pointage{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h2>Compte a rebours</h2>
+        <div>
+            <h4 class="student-name">Nom etudiant</h4>
+            <div class="check-icon"></div>
+            <div>
+                {% csrf_token %}
+                <input type="text" id="rfId" autofocus>
+            </div>
+        </div>
+        <div>
+            <a href="">Fin</a>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="{% static 'dashboard/js/pointage.js' %}"></script>
+{% endblock scripts %}

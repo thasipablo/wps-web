@@ -1,0 +1,13 @@
+{% extends 'dashboard/layouts/_base.html' %}
+
+{% block title %}Supervisor{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1> Bienvenu(e) dans WPS </h1>
+        <div>
+            <a href="{% url 'dashboard:enrolement' %}">Enrolement</a>
+            <a href="{% url 'dashboard:pointage' %}">Pointage</a>
+        </div>
+    </div>
+{% endblock content %}
