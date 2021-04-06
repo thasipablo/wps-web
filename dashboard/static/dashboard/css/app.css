@@ -6,6 +6,10 @@
     color: green;
 }
 
+.warning {
+    color: orange;
+}
+
 .check-icon {
     width: 75px;
 }

@@ -5,4 +5,4 @@ from .models import Attendance
 class AttendanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attendance
-        fields = ('rf_id',)
+        fields = ('rf_id', 'date')
