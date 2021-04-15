@@ -4,18 +4,20 @@
 {% block title %}Pointage{% endblock title %}
 
 {% block content %}
-    <div class="container">
-        <h2>Compte a rebours</h2>
-        <div>
-            <h4 class="student-name">Nom etudiant</h4>
-            <div class="check-icon"></div>
+    <div class="pointage-container">
+        <div class="container pointage-home">
+            <h3>Scannez la carte <br> pour confirmer votre présence</h3><br>
             <div>
-                {% csrf_token %}
-                <input type="text" id="rfId" autofocus>
+                <h4 class="student-name success"></h4>
+                <div class="check-icon"></div>
+                <div>
+                    {% csrf_token %}
+                    <input class="rfid-field" type="text" id="rfId" autofocus>
+                </div>
             </div>
         </div>
-        <div>
-            <a href="">Fin</a>
+        <div class="center-align">
+            <a class="btn" id="btn-fin-pointage" href="{% url 'dashboard:supervisor' %}">Marquer la fin de pointage</a>
         </div>
     </div>
 {% endblock content %}

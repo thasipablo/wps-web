@@ -36,10 +36,22 @@ window.addEventListener('DOMContentLoaded', (e) => {
             .then(response => response.json())
             .then(data => data)
             .catch(error => console.error(error))
+
+        // Get actual full date
+        const today = () => {
+            let year = new Date().getFullYear()
+            let month = new Date().getMonth()+1 < 10 
+                ? `0${new Date().getMonth()+1}` 
+                : new Date().getMonth()+1
+            let day = new Date().getDate() < 10
+                ? `0${new Date().getDate()}`
+                : new Date().getDate()
+            return `${year}-${month}-${day}`
+        }
         
         // Check if the student has already sign the presence
         // to avoid multiple asignments
-        let attendentsList = attendents.filter(attendent => attendent.date.include("2021-04-06"))
+        let attendentsList = attendents.filter(attendent => attendent.date.includes(`${today()}`))
         let attendents_today = []
         attendentsList.forEach(att => attendents_today.push(att.rf_id))
         // free memory from attentsList
@@ -66,7 +78,7 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     `
                     // check if the student has not yet sign, then record the presence
                     if (attendents_today.includes(rfId)) {
-                        console.error('Already signed...')
+                        console.info('Already signed...')
                         studentNameTag.innerHTML = `<div class="warning">VOUS AVEZ DEJA SIGNE...!</div>`
                         checkImgTag.className = 'check-icon warning'
                     }else{
@@ -87,7 +99,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
                     `
                     // check if the student has not yet sign, then record the presence
                     if (attendents_today.includes(rfId)) {
-                        console.error('Already signed...')
+                        console.info('Already signed...')                        
+                        checkImgTag.className = 'check-icon warning'
                     }else{
                         signAttendance(rfId)
                         attendents_today.push(rfId)

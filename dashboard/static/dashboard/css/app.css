@@ -1,3 +1,12 @@
+body {
+    background-color: #f4f4f4;
+    color: #4b4b4b;
+}
+
+/* 
+ * GENERAL 
+ */
+
 .error {
     color: red;
 }
@@ -12,4 +21,87 @@
 
 .check-icon {
     width: 75px;
+}
+
+
+/* 
+ * ENROLEMENT 
+ */
+.st-list,
+.reg-form {
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+
+/* 
+ * POINTAGE
+ */
+
+.container h3 {
+    color: lightslategray;
+    font-weight: 200;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.pointage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
+}
+
+.supervisor-home,
+.pointage-home {
+    background-color: white;
+    text-align: center;
+    width: 600px;
+    padding: 20px;
+    margin: 70px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 35px #d8d8d8d3;
+}
+
+.btn-group {
+    margin-top: 30px;
+}
+
+.rfid-field,
+.rfid-field:focus {
+    border: white !important;
+    outline: white !important;
+    border-bottom: 1px solid #fff !important;
+    box-shadow: 0 1px 0 0 #fff !important;
+    color: whitesmoke;
+}
+
+.student-name {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+#btn-fin-pointage {
+    background-color: #ffa60054;
+    box-shadow: 0 0 0 white;
+    margin-bottom: 20px;
+}
+
+.check-icon {
+    display: inline-block;
+    text-align: center;
+}
+
+.footer {
+    text-align: center;
+}
+
+.copyright {
+    color: lightgrey;
+}
+
+.copyright .heart {
+    color: orange;
 }

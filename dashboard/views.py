@@ -20,7 +20,7 @@ def enrolement(request):
             
         return redirect('dashboard:enrolement')
     else:
-        students = Student.objects.filter().order_by('-id')
+        students = Student.objects.filter().order_by('-id')[:20]
         context = {
             'form':form,
             'students': students
