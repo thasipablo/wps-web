@@ -10,7 +10,7 @@ class Student(models.Model):
 
     def __str__(self):
         return self.fullname
-    
+
     @property
     def fullname(self):
         return f'{self.name} {self.post_name} {self.forename}'

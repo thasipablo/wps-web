@@ -17,7 +17,7 @@ def enrolement(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            
+
         return redirect('dashboard:enrolement')
     else:
         students = Student.objects.filter().order_by('-id')[:20]
