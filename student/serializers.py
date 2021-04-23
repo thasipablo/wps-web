@@ -5,4 +5,4 @@ from .models import Student
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ('rf_id', 'fullname')
+        fields = ('rf_id', 'fullname', 'matricule')
