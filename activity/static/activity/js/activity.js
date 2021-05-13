@@ -3,6 +3,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
     !async function(){
         const studentListTag = document.querySelector(".s-list")
         const averagePourcentageTag = document.querySelector('.pourcentage-average')
+        const searchField = document.querySelector('#searchInput')
+
        
         // get students list from the backend API
         const students = await fetch('student/api/students')
@@ -26,30 +28,20 @@ window.addEventListener('DOMContentLoaded', (e) => {
         let averagePourcentage = 0
         
         // insert students in the DOM
-        students.forEach(student => {
-            let name = student.fullname
-            let matricule = student.matricule
+        insertStudentsInTheDOM(students)
 
-            let studentTag = document.createElement('tr')
-            let matriculeTag = document.createElement('td')
-            let pourcentageTag = document.createElement('td')
-            let nameTag = document.createElement('td')
+        // search student
+        searchField.addEventListener('keyup', e => {
+            // clear the students DOM list first
+            studentListTag.innerHTML = ''
 
-            nameTag.innerHTML = name
-            matriculeTag.innerHTML = matricule
+            let keyWord = e.target.value
 
-            // calculate the pourcentage
-            let nbrAttendances = attendances.filter(attendance => attendance.rf_id == student.rf_id)
-            let pourcentage = (nbrAttendances.length / nbrActivities) * 100
-            pourcentageTag.innerHTML = `${pourcentage} %`
+            // filter students
+            let sts = students.filter(studentFiltered => studentFiltered.fullname.toLowerCase().includes(keyWord.toLowerCase()) || studentFiltered.matricule.includes(keyWord))
+            insertStudentsInTheDOM(sts)
 
-            averagePourcentage += pourcentage
-
-            studentTag.appendChild(nameTag)
-            studentTag.appendChild(matriculeTag)
-            studentTag.appendChild(pourcentageTag)
-
-            studentListTag.appendChild(studentTag)
+            console.log(sts)
         })
 
         averagePourcentage /= students.length
@@ -58,7 +50,36 @@ window.addEventListener('DOMContentLoaded', (e) => {
             <br>
             <span> Participation Moyenne </span>
         `
-        
+
+        // insert students in the DOM
+        function insertStudentsInTheDOM (studentsList) {
+            studentsList.forEach(student => {
+                let name = student.fullname
+                let matricule = student.matricule
+    
+                let studentTag = document.createElement('tr')
+                let matriculeTag = document.createElement('td')
+                let pourcentageTag = document.createElement('td')
+                let nameTag = document.createElement('td')
+    
+                nameTag.innerHTML = name
+                matriculeTag.innerHTML = matricule
+    
+                // calculate the pourcentage
+                let nbrAttendances = attendances.filter(attendance => attendance.rf_id === student.rf_id)
+                let pourcentage = (nbrAttendances.length / nbrActivities) * 100
+                pourcentageTag.innerHTML = `${pourcentage} %`
+    
+                averagePourcentage += pourcentage
+    
+                studentTag.appendChild(nameTag)
+                studentTag.appendChild(matriculeTag)
+                studentTag.appendChild(pourcentageTag)
+    
+                studentListTag.appendChild(studentTag)
+            })
+        }
+
     }()
 
 })
