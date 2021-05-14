@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WPS | {% block title %}{% endblock title %}</title>
 
-    {% comment %} Bootstrap {% endcomment %}
-    {% comment %} <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.min.css.map' %}"> {% endcomment %}
+        {% comment %} Bootstrap
+        <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'dashboard/css/bootstrap.min.css.map' %}">
+        {% endcomment %}
 
-    {% comment %} Materialize {% endcomment %}
-    <link rel="stylesheet" href="{% static 'dashboard/css/materialize.min.css' %}">
-    <link rel="stylesheet" href="{% static 'dashboard/css/app.css' %}">
+        {% comment %} Materialize {% endcomment %}
+        <link rel="stylesheet" href="{% static 'dashboard/css/materialize.min.css' %}">
+        <link rel="stylesheet" href="{% static 'dashboard/css/app.css' %}">
 </head>
 <body>
     {% block content %}{% endblock content %}

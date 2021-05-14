@@ -6,4 +6,4 @@ from .models import Student
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     model = Student
-    list_display = ('name', 'matricule')
+    list_display = ('fullname', 'matricule')

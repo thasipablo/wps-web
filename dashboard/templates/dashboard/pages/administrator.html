@@ -15,7 +15,7 @@
 
     		<!-- top - bar -->
     		<div class="row">
-    			<input type="search" placeholder="search by name or matricule" id="searchInput">
+    			<input type="search" placeholder="Search by Name, Matricule or can scan the card" id="searchInput">
     		</div>
 
     		<!-- center - content -->
@@ -25,29 +25,33 @@
 						<div class="card-text">
 							<span class="pourcentage-average">70%</span>
 						</div>
-					</div>  
-					<div class="card">
+					</div>
+					<div class="card filters">
 						<div class="card-title">
 							Filters
+                            <hr>
 						</div>
 						<div class="card-text">
 							<ul>
-								<li>Tout</li>
-								<li>Genre</li>
-								<li>Faculte</li>
-								<li>promotion</li>
-								<li>status</li>
+								<li class="filter" id="filterAll">TOUS</li>
+								<li class="filter" id="filterLadies">FILLES</li>
+								<li class="filter" id="filterMen">GARCONS</li>
+                                <li class="filter" id="filterFASA">FASA</li>
+                                <li class="filter" id="filterFASIC">FASIC</li>
+                                <li class="filter" id="filterFATHEO">FATHEO</li>
 							</ul>
 						</div>
-					</div>  					
+					</div>
 				</div>
 				<div class="col l7">
 					<div class="card">
-						<table class="table">
+						<table class="table striped">
 							<thead>
 								<th>Noms</th>
+								<th>Genre</th>
 								<th>Matricule</th>
-								<th>Pourcentage</th>
+								<th>Faculté</th>
+								<th>Participation</th>
 							</thead>
 							<tbody class="s-list"></tbody>
 						</table>
@@ -62,5 +66,5 @@
 {% endblock content %}
 
 {% block scripts %}
-    <script defer src="{% static 'activity/js/activity.js' %}"></script>	
+    <script defer src="{% static 'activity/js/activity.js' %}"></script>
 {% endblock scripts %}

@@ -23,6 +23,15 @@ body {
     width: 75px;
 }
 
+.filter {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.filter:hover {
+    background-color: #ccc;
+}
+
 
 /* 
  * ENROLEMENT 
