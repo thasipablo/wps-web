@@ -1,70 +1,79 @@
-{% extends 'dashboard/layouts/_base.html' %}
+{% extends 'dashboard/layouts/_admin_base.html' %}
 {% load static %}
 
 {% block title %}Administrator{% endblock title %}
 
 {% block content %}
+
     <div class="admin-container row">
     	<!-- Menu de navigation gauche -->
-    	<div class="col l2">
-    		menu lateral gauche
+    	<div class="col l2 m-0 p-0">
+    		<div class="menu-title">
+				<h5 class="text-center m-0">Menu</h5>
+			</div>
     	</div>
 
     	<!-- main content -->
     	<main class="col l10">
-
-    		<!-- top - bar -->
-    		<div class="row">
-    			<input type="search" placeholder="Search by Name, Matricule or can scan the card" id="searchInput">
-    		</div>
+			<!-- top - bar -->
+			<div class="row search-bar">
+				<input class="m-0" type="search" placeholder="Search by Name, Matricule or can scan the card" id="searchInput">
+			</div>
 
     		<!-- center - content -->
     		<div class="row">
 				<div class="col l3">
-					<div class="card">
+					<div class="card text-center card-participation m-0">
 						<div class="card-text">
-							<span class="pourcentage-average">70%</span>
+							<!-- % de participation -->
+							<h5 class="pourcentage-average"></h5>
 						</div>
 					</div>
 					<div class="card filters">
-						<div class="card-title">
-							Filters
-                            <hr>
-						</div>
 						<div class="card-text">
-							<ul>
-								<li class="filter" id="filterAll">TOUS</li>
-								<li class="filter" id="filterLadies">FILLES</li>
-								<li class="filter" id="filterMen">GARCONS</li>
-                                <li class="filter" id="filterFASA">FASA</li>
-                                <li class="filter" id="filterFASIC">FASIC</li>
-                                <li class="filter" id="filterFATHEO">FATHEO</li>
+							<ul class="collection">
+								<h5 class="card-title text-center filter-title">Filtres</h5>
+								<li class="filter collection-item" id="filterAll">TOUS</li>
+								<li class="filter collection-item" id="filterLadies">FILLES</li>
+								<li class="filter collection-item" id="filterMen">GARCONS</li>
+                                <li class="filter collection-item" id="filterFASA">FASA</li>
+                                <li class="filter collection-item" id="filterFASIC">FASIC</li>
+                                <li class="filter collection-item" id="filterFATHEO">FATHEO</li>
+								<li class="filter collection-item" id="filterFASEG">FASEG</li>
+								<li class="filter collection-item" id="filterDROIT">DROIT</li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col l7">
-					<div class="card">
+				<div class="col l9 p-0">
+					<div class="card m-0 table-parent">
 						<table class="table striped">
-							<thead>
-								<th>Noms</th>
-								<th>Genre</th>
-								<th>Matricule</th>
-								<th>Faculté</th>
-								<th>Participation</th>
+							<thead class="table-title primary">
+									<th>Noms</th>
+									<th>Genre</th>
+									<th>Matricule</th>
+									<th>Faculté</th>
+									<th>Participation</th>
 							</thead>
 							<tbody class="s-list"></tbody>
 						</table>
-						<div>
-							Exporter | Imprimer
+						<div class="text-center export-print-btn">
+							<a class="waves-effect waves-light btn mr-3">
+								<!-- <i class="material-icons left">exit_to_app</i> -->
+								Exporter
+							</a>
+							<a class="waves-effect waves-light btn ml-3">
+								<!-- <i class="material-icons left">print</i> -->
+								Imprimer
+							</a>
 						</div>
 					</div>
 				</div>
     		</div>
     	</main>
     </div>
-{% endblock content %}
 
-{% block scripts %}
-    <script defer src="{% static 'activity/js/activity.js' %}"></script>
-{% endblock scripts %}
+    {# TEMPLATE #}
+
+
+{% endblock content %}

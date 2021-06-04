@@ -25,7 +25,7 @@ SECRET_KEY = 't_jte&%v=!yi3+16h!gbwqw15$#yr04oqa!b#_*q9m(=7rqbzu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','192.168.43.22']
 
 
 # Application definition
@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     # Locals
     'student.apps.StudentConfig',
     'activity.apps.ActivityConfig',
-    'dashboard.apps.DashboardConfig'
+    'dashboard.apps.DashboardConfig',
+    'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'redirection'
+LOGOUT_REDIRECT_URL = 'login'

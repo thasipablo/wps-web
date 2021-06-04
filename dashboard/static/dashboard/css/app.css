@@ -32,6 +32,80 @@ body {
     background-color: #ccc;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.m-0 {
+    margin: 0 !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.primary {
+    background-color: darkturquoise;
+}
+
+/* 
+* ADMINISTRATION
+*/
+.card-participation {
+    padding: 30px 20px;
+    color: darkturquoise;
+    background-color: #f4f4f4;
+}
+
+.filter-title {
+    margin: 0;
+    padding: 10px 0 10px 0;
+    color:white;
+    background-color: darkturquoise;
+}
+
+.export-print-btn {
+    padding: 5px;
+    background-color: #f4f4f4;
+}
+
+.export-print-btn a:first-child {
+    margin-right: 30px;
+}
+
+.export-print-btn a:last-child {
+    margin-left: 30px;
+}
+
+.menu-title {
+    margin-left: 10px;
+    padding: 10px 0;
+    color: white;
+    background-color: darkturquoise;
+}
+
+.search-bar {
+    padding: 0 0 20px 0;
+    margin: 10px;
+    text-align: center;
+}
+
+.search-bar input {
+    width: 50% !important;
+    color: black;
+}
+
+.table-parent {
+    margin-right: 10px !important;
+}
+
+.table-title {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+
 
 /* 
  * ENROLEMENT 
@@ -41,8 +115,30 @@ body {
     background-color: white;
     text-align: center;
     border-radius: 5px;
-    margin: 10px;
-    padding: 5px;
+    margin: 0 10px;
+}
+
+.st-list h4,
+.reg-form h4 {
+    padding: 15px;
+    color: white;
+}
+
+.reg-btns {
+    margin-top: 50px;
+}
+
+.reg-btns a {
+    background-color: darkred;
+    margin-right: 50px;
+}
+
+.reg-btns a:hover {
+    background-color: red;
+}
+
+.reg-btns button {
+    margin-left: 50px;
 }
 
 /* 
@@ -93,7 +189,7 @@ body {
 }
 
 #btn-fin-pointage {
-    background-color: #ffa60054;
+    background-color: #2b2b2b;
     box-shadow: 0 0 0 white;
     margin-bottom: 20px;
 }

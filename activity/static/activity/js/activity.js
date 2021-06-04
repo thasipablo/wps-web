@@ -11,16 +11,18 @@ window.addEventListener('DOMContentLoaded', (e) => {
         const filterFASATag = document.querySelector('#filterFASA')
         const filterFASICTag = document.querySelector('#filterFASIC')
         const filterFATHEOTag = document.querySelector('#filterFATHEO')
+        const filterFASEGTag = document.querySelector('#filterFASEG')
+        const filterDROITTag = document.querySelector('#filterDROIT')
 
 
         // get students list from the backend API
-        const students = await fetch('student/api/students')
+        const students = await fetch('http://192.168.43.22:8000/student/api/students')
             .then(response => response.json())
             .then(data => data)
             .catch(err => console.error(err))
 
         // get attendancies from the API
-        const attendances = await fetch('attendance/api/attendances')
+        const attendances = await fetch('http://192.168.43.22:8000/attendance/api/attendances')
             .then(response => response.json())
             .then(data => data)
             .catch(err => console.error(err))
@@ -66,6 +68,16 @@ window.addEventListener('DOMContentLoaded', (e) => {
         filterFATHEOTag.addEventListener('click', e => {
             studentListTag.innerHTML = ''
             insertStudentsInTheDOM(students.filter(st => st.faculty == 'FATHEO'))
+        })
+
+        filterFASEGTag.addEventListener('click', e => {
+            studentListTag.innerHTML = ''
+            insertStudentsInTheDOM(students.filter(st => st.faculty == 'FASEG'))
+        })
+
+        filterDROITTag.addEventListener('click', e => {
+            studentListTag.innerHTML = ''
+            insertStudentsInTheDOM(students.filter(st => st.faculty == 'DROIT'))
         })
         // end filters
 

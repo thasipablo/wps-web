@@ -8,28 +8,28 @@
 {% block content %}
     <div class="">
         <div class="row">
-            <div class="col s12 m6">
+            <div class="col s12 m6 p-0">
                 <div class="st-list">
-                    <h4>Etudiants</h4>
-                    <hr>
-                    <table class="table">
-                        <tr>
+                    <h4 class="primary m-0">Etudiants</h4>
+                    <table class="table striped">
+                        <thead>
                             <th>Noms</th>
                             <th>Matricule</th>
-                        </tr>
+                        </thead>
+                        <tbody>
                         {% for student in students %}
                             <tr>
                                 <td>{{ student.fullname }}</td>
                                 <td>{{ student.matricule }}</td>
                             </tr>
                         {% endfor %}
+                        </tbody>
                     </table>
                 </div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 m6 p-0">
                 <div class="reg-form">
-                    <h4> Enrolement </h4>
-                    <hr>
+                    <h4 class="primary m-0"> Enrolement</h4>
                     <div>
                         <form method="POST">
                             {% csrf_token %}
@@ -39,8 +39,9 @@
                                     <label>{{field.label}}</label>
                                 </div>
                             {% endfor %}
-                            <div class="col s12">
-                                <a href="{% url 'dashboard:supervisor' %}" class="btn btn-warning">Annuler</a>
+                            {{ form.gender }}
+                            <div class="col s12 reg-btns">
+                                <a href="{% url 'dashboard:supervisor' %}" class="btn btn-danger">Annuler</a>
                                 <button type="submit" class="btn btn-info">Enregistrer</button>
                             </div>
                         </form>
